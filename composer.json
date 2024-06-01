@@ -17,12 +17,12 @@
         "email": "cyrill.kalita@gmail.com"
     }],
     "require": {
-        "illuminate/support": "^8.0|^9.0|^10.0",
-        "illuminate/validation": "^8.0|^9.0|^10.0",
-        "nesbot/carbon": "^2.0"
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/validation": "^8.0|^9.0|^10.0|^11.0",
+        "nesbot/carbon": "^3.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^10.0"
     },
     "autoload": {
         "psr-4": {
