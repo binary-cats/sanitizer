@@ -11,8 +11,8 @@ class FormatDate implements Filter
     /**
      *  Lowercase the given string.
      *
-     *  @param  string  $value
-     *  @return string
+     * @param  string  $value
+     * @return string
      */
     public function apply($value, $options = [])
     {

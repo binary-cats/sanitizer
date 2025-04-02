@@ -13,42 +13,42 @@ class Sanitizer
     /**
      *  Data to sanitize.
      *
-     *  @var array
+     * @var array
      */
     protected $data;
 
     /**
      *  Filters to apply.
      *
-     *  @var array
+     * @var array
      */
     protected $rules;
 
     /**
      *  Available filters as $name => $classPath.
      *
-     *  @var array
+     * @var array
      */
     protected $filters = [
-        'capitalize'  => \BinaryCats\Sanitizer\Filters\Capitalize::class,
-        'cast'        => \BinaryCats\Sanitizer\Filters\Cast::class,
-        'escape'      => \BinaryCats\Sanitizer\Filters\EscapeHTML::class,
+        'capitalize' => \BinaryCats\Sanitizer\Filters\Capitalize::class,
+        'cast' => \BinaryCats\Sanitizer\Filters\Cast::class,
+        'escape' => \BinaryCats\Sanitizer\Filters\EscapeHTML::class,
         'format_date' => \BinaryCats\Sanitizer\Filters\FormatDate::class,
-        'lowercase'   => \BinaryCats\Sanitizer\Filters\Lowercase::class,
-        'uppercase'   => \BinaryCats\Sanitizer\Filters\Uppercase::class,
-        'trim'        => \BinaryCats\Sanitizer\Filters\Trim::class,
-        'strip_tags'  => \BinaryCats\Sanitizer\Filters\StripTags::class,
-        'digit'       => \BinaryCats\Sanitizer\Filters\Digit::class,
-        'filter_if'   => \BinaryCats\Sanitizer\Filters\FilterIf::class,
+        'lowercase' => \BinaryCats\Sanitizer\Filters\Lowercase::class,
+        'uppercase' => \BinaryCats\Sanitizer\Filters\Uppercase::class,
+        'trim' => \BinaryCats\Sanitizer\Filters\Trim::class,
+        'strip_tags' => \BinaryCats\Sanitizer\Filters\StripTags::class,
+        'digit' => \BinaryCats\Sanitizer\Filters\Digit::class,
+        'filter_if' => \BinaryCats\Sanitizer\Filters\FilterIf::class,
     ];
 
     /**
      *  Create a new sanitizer instance.
      *
-     *  @param  array   $data
-     *  @param  array   $rules      Rules to be applied to each data attribute
-     *  @param  array   $filters    Available filters for this sanitizer
-     *  @return Sanitizer
+     * @param  array  $data
+     * @param  array  $rules  Rules to be applied to each data attribute
+     * @param  array  $filters  Available filters for this sanitizer
+     * @return Sanitizer
      */
     public function __construct(array $data, array $rules, array $customFilters = [])
     {
@@ -60,8 +60,8 @@ class Sanitizer
     /**
      *  Parse a rules array.
      *
-     *  @param  array $rules
-     *  @return array
+     * @param  array  $rules
+     * @return array
      */
     protected function parseRules(array $rules)
     {
@@ -84,8 +84,8 @@ class Sanitizer
     /**
      *  Parse a rule.
      *
-     *  @param  string|Closure $rule
-     *  @return array|Closure
+     * @param  string|Closure  $rule
+     * @return array|Closure
      */
     protected function parseRule($rule)
     {
@@ -101,8 +101,8 @@ class Sanitizer
     /**
      *  Parse a rule string formatted as filterName:option1, option2 into an array formatted as [name => filterName, options => [option1, option2]].
      *
-     *  @param  string $rule    Formatted as 'filterName:option1, option2' or just 'filterName'
-     *  @return array           Formatted as [name => filterName, options => [option1, option2]]. Empty array if no filter name was found.
+     * @param  string  $rule  Formatted as 'filterName:option1, option2' or just 'filterName'
+     * @return array Formatted as [name => filterName, options => [option1, option2]]. Empty array if no filter name was found.
      */
     protected function parseRuleString($rule)
     {
@@ -123,8 +123,8 @@ class Sanitizer
     /**
      *  Apply the given filter by its name.
      *
-     *  @param  string|Closure $rule
-     *  @return Filter
+     * @param  string|Closure  $rule
+     * @return Filter
      */
     protected function applyFilter($rule, $value)
     {
@@ -152,7 +152,7 @@ class Sanitizer
     /**
      *  Sanitize the given data.
      *
-     *  @return array
+     * @return array
      */
     public function sanitize()
     {

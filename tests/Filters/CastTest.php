@@ -6,8 +6,8 @@ use PHPUnit\Framework\TestCase;
 class CastTest extends TestCase
 {
     /**
-     * @param $data
-     * @param $rules
+     * @param  $data
+     * @param  $rules
      * @return mixed
      */
     public function sanitize($data, $rules)
