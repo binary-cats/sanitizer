@@ -145,7 +145,7 @@ class Sanitizer
         if ($filter instanceof Closure) {
             return call_user_func_array($filter, [$value, $options]);
         } else {
-            return (new $filter)->apply($value, $options);
+            return (new $filter())->apply($value, $options);
         }
     }
 
