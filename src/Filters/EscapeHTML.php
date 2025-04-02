@@ -9,8 +9,8 @@ class EscapeHTML implements Filter
     /**
      *  Remove HTML tags and encode special characters from the given string.
      *
-     *  @param  string  $value
-     *  @return string
+     * @param  string  $value
+     * @return string
      */
     public function apply($value, $options = [])
     {

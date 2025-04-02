@@ -9,12 +9,12 @@ class FactoryTest extends TestCase
     public function sanitize($data, $rules)
     {
         $sanitizer = new Sanitizer($data, $rules, [
-            'capitalize'  => \BinaryCats\Sanitizer\Filters\Capitalize::class,
-            'escape'      => \BinaryCats\Sanitizer\Filters\EscapeHTML::class,
+            'capitalize' => \BinaryCats\Sanitizer\Filters\Capitalize::class,
+            'escape' => \BinaryCats\Sanitizer\Filters\EscapeHTML::class,
             'format_date' => \BinaryCats\Sanitizer\Filters\FormatDate::class,
-            'lowercase'   => \BinaryCats\Sanitizer\Filters\Lowercase::class,
-            'uppercase'   => \BinaryCats\Sanitizer\Filters\Uppercase::class,
-            'trim'        => \BinaryCats\Sanitizer\Filters\Trim::class,
+            'lowercase' => \BinaryCats\Sanitizer\Filters\Lowercase::class,
+            'uppercase' => \BinaryCats\Sanitizer\Filters\Uppercase::class,
+            'trim' => \BinaryCats\Sanitizer\Filters\Trim::class,
         ]);
 
         return $sanitizer->sanitize();

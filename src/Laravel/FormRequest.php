@@ -9,7 +9,7 @@ class FormRequest extends LaravelFormRequest
     /**
      *  Sanitize input before validating.
      *
-     *  @return void
+     * @return void
      */
     public function validate()
     {
@@ -20,7 +20,7 @@ class FormRequest extends LaravelFormRequest
     /**
      *  Sanitize this request's input.
      *
-     *  @return void
+     * @return void
      */
     public function sanitize()
     {
@@ -31,7 +31,7 @@ class FormRequest extends LaravelFormRequest
     /**
      *  Filters to be applied to the input.
      *
-     *  @return array
+     * @return array
      */
     public function filters()
     {
@@ -41,7 +41,7 @@ class FormRequest extends LaravelFormRequest
     /**
      *  Validation rules to be applied to the input.
      *
-     *  @return array
+     * @return array
      */
     public function rules()
     {

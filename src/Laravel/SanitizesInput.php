@@ -7,7 +7,7 @@ trait SanitizesInput
     /**
      *  Sanitize input before validating.
      *
-     *  @return void
+     * @return void
      */
     public function validateResolved()
     {
@@ -18,7 +18,7 @@ trait SanitizesInput
     /**
      *  Sanitize this request's input.
      *
-     *  @return void
+     * @return void
      */
     public function sanitize()
     {
@@ -30,7 +30,7 @@ trait SanitizesInput
     /**
      *  Add custom fields to the Sanitizer.
      *
-     *  @return void
+     * @return void
      */
     public function addCustomFilters()
     {
@@ -42,7 +42,7 @@ trait SanitizesInput
     /**
      *  Filters to be applied to the input.
      *
-     *  @return array
+     * @return array
      */
     public function filters()
     {
@@ -52,7 +52,7 @@ trait SanitizesInput
     /**
      *  Custom Filters to be applied to the input.
      *
-     *  @return array
+     * @return array
      */
     public function customFilters()
     {

@@ -9,9 +9,9 @@ class FilterIf implements Filter
     /**
      *  Checks if filters should run if there is value passed that matches.
      *
-     *  @param  array   $values
-     *  @param  array   $options
-     *  @return bool
+     * @param  array  $values
+     * @param  array  $options
+     * @return bool
      */
     public function apply($values, $options = [])
     {

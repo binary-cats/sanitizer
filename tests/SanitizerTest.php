@@ -6,8 +6,8 @@ use PHPUnit\Framework\TestCase;
 class SanitizerTest extends TestCase
 {
     /**
-     * @param $data
-     * @param $rules
+     * @param  $data
+     * @param  $rules
      * @return mixed
      */
     public function sanitize($data, $rules)
@@ -56,23 +56,23 @@ class SanitizerTest extends TestCase
     public function test_wildcard_filters()
     {
         $data = [
-            'name'    => [
+            'name' => [
                 'first' => ' John ',
-                'last'  => ' Doe ',
+                'last' => ' Doe ',
             ],
             'address' => [
                 'street' => ' Some street ',
-                'city'   => ' New York ',
+                'city' => ' New York ',
             ],
         ];
         $rules = [
-            'name.*'       => 'trim',
+            'name.*' => 'trim',
             'address.city' => 'trim',
         ];
         $data = $this->sanitize($data, $rules);
 
         $sanitized = [
-            'name'    => ['first' => 'John', 'last' => 'Doe'],
+            'name' => ['first' => 'John', 'last' => 'Doe'],
             'address' => ['street' => ' Some street ', 'city' => 'New York'],
         ];
 
