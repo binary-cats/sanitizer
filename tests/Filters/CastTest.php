@@ -5,8 +5,6 @@ use PHPUnit\Framework\TestCase;
 
 class CastTest extends TestCase
 {
-    use _PHPUnitShim;
-
     /**
      * @param $data
      * @param $rules
