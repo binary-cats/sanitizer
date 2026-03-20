@@ -2,10 +2,9 @@
 
 # Sanitizer
 
-![https://github.com/binary-cats/sanitizer/actions](https://github.com/binary-cats/sanitizer/workflows/Laravel/badge.svg)
-![https://github.styleci.io/repos/316763653](https://github.styleci.io/repos/316763653/shield)
-![https://scrutinizer-ci.com/g/binary-cats/sanitizer/](https://scrutinizer-ci.com/g/binary-cats/sanitizer/badges/quality-score.png?b=master)
-[![Build Status](https://img.shields.io/travis/binary-cats/sanitizer/master.svg?style=flat-square)](https://travis-ci.org/binary-cats/sanitizer)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/binary-cats/sanitizer.svg?style=flat-square)](https://packagist.org/packages/binary-cats/sanitizer)
+[![Tests](https://img.shields.io/github/actions/workflow/status/binary-cats/sanitizer/run-tests.yml?branch=v13.x&label=tests&style=flat-square)](https://github.com/binary-cats/sanitizer/actions/workflows/run-tests.yml)
+[![Code Style Action Status](https://github.styleci.io/repos/316763653/shield?branch=v13.x)](https://github.styleci.io/repos/316763653)
 
 ## Introduction
 

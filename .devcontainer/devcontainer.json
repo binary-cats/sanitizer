@@ -1,5 +1,5 @@
 {
-    "name": "Laravel Exportify",
+    "name": "Sanitizer",
     "build": {
         "dockerfile": "Dockerfile",
         "context": "."
