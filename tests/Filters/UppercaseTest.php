@@ -1,6 +1,7 @@
 <?php
 
 use BinaryCats\Sanitizer\Sanitizer;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class UppercaseTest extends TestCase
@@ -17,9 +18,7 @@ class UppercaseTest extends TestCase
         return $sanitizer->sanitize();
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_uppercases_strings()
     {
         $data = [
@@ -32,9 +31,7 @@ class UppercaseTest extends TestCase
         $this->assertEquals('HELLO EVERYBODY', $data['name']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_uppercases_special_characters_strings()
     {
         $data = [

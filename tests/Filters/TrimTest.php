@@ -1,6 +1,7 @@
 <?php
 
 use BinaryCats\Sanitizer\Sanitizer;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class TrimTest extends TestCase
@@ -17,9 +18,7 @@ class TrimTest extends TestCase
         return $sanitizer->sanitize();
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_trims_strings()
     {
         $data = [

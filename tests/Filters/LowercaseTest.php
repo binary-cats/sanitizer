@@ -1,6 +1,7 @@
 <?php
 
 use BinaryCats\Sanitizer\Sanitizer;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class LowercaseTest extends TestCase
@@ -17,9 +18,7 @@ class LowercaseTest extends TestCase
         return $sanitizer->sanitize();
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_lowercases_strings()
     {
         $data = [
@@ -32,9 +31,7 @@ class LowercaseTest extends TestCase
         $this->assertEquals('hello everybody', $data['name']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_lowercases_special_characters_strings()
     {
         $data = [

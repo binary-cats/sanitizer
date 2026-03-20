@@ -1,6 +1,7 @@
 <?php
 
 use BinaryCats\Sanitizer\Sanitizer;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class FormatDateTest extends TestCase
@@ -17,9 +18,7 @@ class FormatDateTest extends TestCase
         return $sanitizer->sanitize();
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_formats_dates()
     {
         $data = [
@@ -32,9 +31,7 @@ class FormatDateTest extends TestCase
         $this->assertEquals('1983-03-21', $data['name']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_requires_two_arguments()
     {
         $this->expectException(\InvalidArgumentException::class);

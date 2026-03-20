@@ -1,6 +1,7 @@
 <?php
 
 use BinaryCats\Sanitizer\Sanitizer;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class CastTest extends TestCase
@@ -17,27 +18,21 @@ class CastTest extends TestCase
         return $sanitizer->sanitize();
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_throws_exception_when_no_cast_type_is_set()
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->sanitize(['name' => 'Name'], ['name' => 'cast']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_throws_exception_when_non_existing_cast_type_is_set()
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->sanitize(['name' => 'Name'], ['name' => 'cast:bullshit']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_casts_to_integer()
     {
         $results = $this->sanitize(['var' => '15.6'], ['var' => 'cast:integer']);
@@ -45,9 +40,7 @@ class CastTest extends TestCase
         $this->assertEquals(15, $results['var']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_casts_to_float()
     {
         $results = $this->sanitize(['var' => '15.6'], ['var' => 'cast:double']);
@@ -55,9 +48,7 @@ class CastTest extends TestCase
         $this->assertEquals(15.6, $results['var']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_casts_to_string()
     {
         $results = $this->sanitize(['var' => 15], ['var' => 'cast:string']);
@@ -65,9 +56,7 @@ class CastTest extends TestCase
         $this->assertEquals('15', $results['var']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_casts_to_boolean()
     {
         $results = $this->sanitize(['var' => 15], ['var' => 'cast:boolean']);
@@ -75,9 +64,7 @@ class CastTest extends TestCase
         $this->assertEquals(true, $results['var']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_casts_array_to_object()
     {
         $data = [
@@ -91,9 +78,7 @@ class CastTest extends TestCase
         $this->assertEquals(15.6, $results['var']->cost);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_casts_json_to_object()
     {
         $data = [
@@ -107,9 +92,7 @@ class CastTest extends TestCase
         $this->assertEquals(15.6, $results['var']->cost);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_casts_json_to_array()
     {
         $data = [
@@ -123,9 +106,7 @@ class CastTest extends TestCase
         $this->assertEquals(15.6, $results['var']['cost']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_casts_array_to_collection()
     {
         $data = [
@@ -138,9 +119,7 @@ class CastTest extends TestCase
         $this->assertEquals('Name', $results['var']->first());
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_casts_json_to_collection()
     {
         $data = [
