@@ -15,30 +15,17 @@ class Cast implements Filter
      */
     public function apply($value, $options = [])
     {
-        $type = isset($options[0]) ? $options[0] : null;
-        switch ($type) {
-            case 'int':
-            case 'integer':
-                return (int) $value;
-            case 'real':
-            case 'float':
-            case 'double':
-                return (float) $value;
-            case 'string':
-                return (string) $value;
-            case 'bool':
-            case 'boolean':
-                return (bool) $value;
-            case 'object':
-                return is_array($value) ? (object) $value : json_decode($value, false);
-            case 'array':
-                return json_decode($value, true);
-            case 'collection':
-                $array = is_array($value) ? $value : json_decode($value, true);
+        $type = $options[0] ?? null;
 
-                return new Collection($array);
-            default:
-                throw new \InvalidArgumentException("Wrong Sanitizer casting format: {$type}.");
-        }
+        return match ($type) {
+            'int', 'integer' => (int) $value,
+            'real', 'float', 'double' => (float) $value,
+            'string' => (string) $value,
+            'bool', 'boolean' => (bool) $value,
+            'object' => is_array($value) ? (object) $value : json_decode($value, false),
+            'array' => json_decode($value, true),
+            'collection' => new Collection(is_array($value) ? $value : json_decode($value, true)),
+            default => throw new \InvalidArgumentException("Wrong Sanitizer casting format: {$type}."),
+        };
     }
 }
