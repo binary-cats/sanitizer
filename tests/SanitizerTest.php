@@ -1,6 +1,7 @@
 <?php
 
 use BinaryCats\Sanitizer\Sanitizer;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class SanitizerTest extends TestCase
@@ -17,6 +18,7 @@ class SanitizerTest extends TestCase
         return $sanitizer->sanitize();
     }
 
+    #[Test]
     public function test_combine_filters()
     {
         $data = [
@@ -29,6 +31,7 @@ class SanitizerTest extends TestCase
         $this->assertEquals('Hello Everybody', $data['name']);
     }
 
+    #[Test]
     public function test_input_unchanged_if_no_filter()
     {
         $data = [
@@ -41,6 +44,7 @@ class SanitizerTest extends TestCase
         $this->assertEquals('  HellO EverYboDy   ', $data['name']);
     }
 
+    #[Test]
     public function test_array_filters()
     {
         $data = [
@@ -53,6 +57,7 @@ class SanitizerTest extends TestCase
         $this->assertEquals('Hello Everybody', $data['name']);
     }
 
+    #[Test]
     public function test_wildcard_filters()
     {
         $data = [
@@ -79,9 +84,7 @@ class SanitizerTest extends TestCase
         $this->assertEquals($sanitized, $data);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_throws_exception_if_non_existing_filter()
     {
         $this->expectException(InvalidArgumentException::class);
@@ -94,6 +97,7 @@ class SanitizerTest extends TestCase
         $data = $this->sanitize($data, $rules);
     }
 
+    #[Test]
     public function test_it_should_only_sanitize_passed_data()
     {
         $data = [
@@ -112,6 +116,7 @@ class SanitizerTest extends TestCase
         $this->assertEquals(1, count($data));
     }
 
+    #[Test]
     public function test_closure_rule()
     {
         $data = [

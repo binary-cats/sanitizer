@@ -2,6 +2,7 @@
 
 use BinaryCats\Sanitizer\Laravel\Factory;
 use BinaryCats\Sanitizer\Sanitizer;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class FactoryTest extends TestCase
@@ -20,6 +21,7 @@ class FactoryTest extends TestCase
         return $sanitizer->sanitize();
     }
 
+    #[Test]
     public function test_custom_closure_filter()
     {
         $factory = new Factory;
@@ -38,6 +40,7 @@ class FactoryTest extends TestCase
         $this->assertEquals(sha1('TEST'), $newData['name']);
     }
 
+    #[Test]
     public function test_custom_class_filter()
     {
         $factory = new Factory;
@@ -54,6 +57,7 @@ class FactoryTest extends TestCase
         $this->assertEquals('TESTTEST', $newData['name']);
     }
 
+    #[Test]
     public function test_replace_filter()
     {
         $factory = new Factory;

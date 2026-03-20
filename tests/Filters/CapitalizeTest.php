@@ -1,6 +1,7 @@
 <?php
 
 use BinaryCats\Sanitizer\Sanitizer;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class CapitalizeTest extends TestCase
@@ -17,18 +18,14 @@ class CapitalizeTest extends TestCase
         return $sanitizer->sanitize();
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_capitalizes_strings()
     {
         $result = $this->sanitize(['name' => ' jon snow 145'], ['name' => 'capitalize']);
         $this->assertEquals(' Jon Snow 145', $result['name']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_capitalizes_special_characters()
     {
         $result = $this->sanitize(['name' => 'Τάχιστη αλώπηξ'], ['name' => 'capitalize']);
