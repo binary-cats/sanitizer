@@ -1,6 +1,7 @@
 <?php
 
 use BinaryCats\Sanitizer\Sanitizer;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class DigitTest extends TestCase
@@ -17,9 +18,7 @@ class DigitTest extends TestCase
         return $sanitizer->sanitize();
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_string_to_digits()
     {
         $data = [
@@ -32,9 +31,7 @@ class DigitTest extends TestCase
         $this->assertEquals('080969012345', $data['name']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_string_to_digits2()
     {
         $data = [

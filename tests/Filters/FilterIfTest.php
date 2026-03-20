@@ -1,6 +1,7 @@
 <?php
 
 use BinaryCats\Sanitizer\Sanitizer;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class FilterIfTest extends TestCase
@@ -17,9 +18,7 @@ class FilterIfTest extends TestCase
         return $sanitizer->sanitize();
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_apply_filter_if_match()
     {
         $data = [
@@ -32,9 +31,7 @@ class FilterIfTest extends TestCase
         $this->assertEquals('HELLO EVERYBODY', $data['name']);
     }
 
-    /**
-     *  @test
-     */
+    #[Test]
     public function it_does_not_apply_filter_if_no_match()
     {
         $data = [
