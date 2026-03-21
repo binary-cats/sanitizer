@@ -197,6 +197,10 @@ To generate a Sanitized Request just execute the included Artisan command:
 
 The only difference with a Laravel FormRequest is that now you'll have an extra 'fields' method in which to enter the input filters you wish to apply, and that input will be sanitized before being validated.
 
+## Support us
+
+[Binary Cats](https://binarycats.dev) is a webdesign agency based in Illinois, US.
+
 ### License
 
 Sanitizer is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
